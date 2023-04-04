@@ -12,19 +12,20 @@ formEl.addEventListener('submit', (event) => {
     event.preventDefault();
     var location = locationInputEl.value.trim();
     if (location) {
-        array.push(location)
-        localStorage.setItem("cities", JSON.stringify(array))
-        retrieveWeatherData(location);
+        array.push(location);
         locationInputEl.value = '';
     }
-    renderSearches()
+        localStorage.setItem("cities", JSON.stringify(array));
+        retrieveWeatherData(location);
+        renderSearches();
 });
 
 function renderSearches() {
+    list.innerHTML = '';
     var history = JSON.parse(localStorage.getItem("cities"))
     for(var i = 0; i < history.length; i++) {
         var button = document.createElement('button')
-        button.innerHTML = history[history.length - 1]
+        button.innerHTML = history [i]
         button.addEventListener("click", function() {
             retrieveWeatherData(button.innerHTML)
         })
