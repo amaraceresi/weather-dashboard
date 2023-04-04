@@ -1,0 +1,20 @@
+html, body, * {
+    text-align: center;
+}
+
+body {
+    background: rgb(21, 120, 212);
+    color: white;
+
+}
+
+#cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#current {
+    display: flex;
+    justify-content: center;
+    
+}
