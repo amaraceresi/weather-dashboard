@@ -25,12 +25,15 @@ function renderSearches() {
     var history = JSON.parse(localStorage.getItem("cities"))
     for(var i = 0; i < history.length; i++) {
         var button = document.createElement('button')
-        button.innerHTML = history [i]
-        button.addEventListener("click", function() {
-            retrieveWeatherData(button.innerHTML)
+        button.innerHTML = history[i]
+        button.addEventListener("click", function(event) {
+            event.preventDefault()
+            const city = event.target.innerHTML
+            retrieveWeatherData(city)
         })
         list.append(button)
     }
+
 }
 
 function retrieveWeatherData(location) {
@@ -98,4 +101,3 @@ function retrieveWeatherData(location) {
     })
     
 }
-
