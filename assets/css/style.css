@@ -1,20 +1,129 @@
 html, body, * {
     text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: rgb(21, 120, 212);
+    background: rgb(235, 245, 255); 
+    color: rgb(25, 50, 85); 
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 1rem 0;
+    background: rgb(25, 50, 85);
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+#location-input {
+    padding: 0.5rem;
+    border: 1px solid rgb(200, 220, 240); 
+    border-right: none; 
+    border-radius: 4px 0 0 4px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(200, 220, 240); 
+    border-left: none; 
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    background: rgb(65, 105, 185); 
+    color: white;
+}
+
+button:hover {
+    background: rgb(95, 135, 215); 
+}
+
+#list {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#list button {
+    margin: 0.1rem 0.5rem;
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid rgb(200, 220, 240);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    color: rgb(25, 50, 85); 
+}
+
+#list button:hover {
+    background: rgb(235, 245, 255);
 }
 
 #cards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 #current {
-    display: flex;
-    justify-content: center;
-    
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid rgb(200, 220, 240);
+    border-radius: 8px;
+}
+
+#forecast {
+    flex: 1;
+    max-width: calc(20% - 1rem); 
+    background: white;
+    border: 1px solid rgb(200, 220, 240);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    #cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #forecast {
+        max-width: 90%;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #location-input {
+        width: 80%;
+    }
 }
